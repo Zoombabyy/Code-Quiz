@@ -7,43 +7,104 @@
     <link rel="stylesheet" href="style.css" />
     <title>Code Quiz</title>
   </head>
-  <body onload="">
+  <body onload="nextQuestion(0)">
     <main>
-    <div class="container" id="score">
-      <div class="content-container">
-        <h1>Congratulations, you completed the quiz!</h1>
-        <div class="grades">
-          <p>Attempts: 10</p>
-          <p>Correct: <span id="correct-score"></span></p>
-          <p>Wrong: <span id="wrong-score"></span></p>
-          <p>Final Grade: <span id="final-grade"></span>%</p>
-          <p><span id="letter-grade"></span></p>
+      <section class="container" id="score">
+        <div class="content-container">
+          <h1>Congratulations, you completed the quiz!</h1>
+          <div class="grades">
+            <p>Attempts: 10</p>
+            <p>Correct: <span id="correct-score"></span></p>
+            <p>Wrong: <span id="wrong-score"></span></p>
+            <p>Final Grade: <span id="final-grade"></span>%</p>
+            <p><span id="letter-grade"></span></p>
+          </div>
+          <div class="button-container">
+            <button class="button">Continue</button>
+          </div>
         </div>
-        <div class="Con-button">
-          <button class="button1">Continue</button>
-        </div>
-      </div>
-    </div>
+      </section>
 
-    <div class="quiz-container">
-      <div class="details">
-        <h1>Correct: <span id="current-score"></span> / 10</h1>
-        <h1>Question #: <span id="question-number"></span> / 10</h1>
-      </div>
-      <div class="question-container">
-        <h1 id="question-display"></h1>
-      </div>
-      <div class="answers-container">
-        <div class="answers" id="answers2">
-          <div class="content-container2">
-            <h1>Please Pick An Option</h1>
-
-            <div class="button-container2">
-              <button class="button2">Continue</button>
+      <section class="quiz-container">
+        <div class="details">
+          <h1>Correct: <span class="current-score"></span> / 10</h1>
+          <h1>Question #: <span class="question-number"></span> / 10</h1>
         </div>
-      </div>
-    </div>
-  </main>
+        <div class="question-container">
+          <h1 class="question-display"></h1>
+        </div>
+        <div class="answers-container">
+          <div class="container" id="choices-con">
+            <div class="content-container">
+              <h1>Please Choose an Answer</h1>
+
+              <div class="button-container">
+                <button class="button">Continue</button>
+              </div>
+            </div>
+          </div>
+          <span>
+            <input
+              type="radio"
+              id="choice-one"
+              name="choice"
+              class="radio"
+              value="choice1"
+            />
+            <label
+              for="choice-one"
+              class="choice"
+              id="choice-one-label"
+            ></label>
+          </span>
+          <span>
+            <input
+              type="radio"
+              id="choice-two"
+              name="choice"
+              class="radio"
+              value="choice2"
+            />
+            <label
+              for="choice-two"
+              class="choice"
+              id="choice-two-label"
+            ></label>
+          </span>
+          <span>
+            <input
+              type="radio"
+              id="choice-three"
+              name="choice"
+              class="radio"
+              value="choice3"
+            />
+            <label
+              for="choice-three"
+              class="choice"
+              id="choice-three-label"
+            ></label>
+          </span>
+          <span>
+            <input
+              type="radio"
+              id="choice-four"
+              name="choice"
+              class="radio"
+              value="choice4"
+            />
+            <label
+              for="choice-four"
+              class="choice"
+              id="choice-four-label"
+            ></label>
+          </span>
+        </div>
+        <div class="next-button-container">
+          <button class="next-button">Next Question</button>
+        </div>
+      </section>
+    </main>
     <script src="./script.js"></script>
   </body>
 </html>

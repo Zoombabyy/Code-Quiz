@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.quiz-container {
+  width: 640px;
+  height: 480px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 30px;
+}
+
+.details {
+  width: 80%;
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.details h1 {
+  font-size: 20px;
+}
+
+.question-container {
+  width: 80%;
+  height: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 25px;
+}
+
+.question-display {
+  font-size: 20px;
+  text-align: center;
+  padding: 5px;
+}
+
+.answers-container {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.answers-container span {
+  width: 45%;
+  height: 48px;
+  border: 2px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.choice {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bolder;
+  color: black;
+}
+
+.choice:hover {
+  color: white;
+}
+
+.radio {
+  position: relative;
+  display: none;
+}
+
+.radio:checked ~ .choice {
+  background: rgb(121, 204, 252);
+}
+
+.next-button-container {
+  width: 50%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.next-button {
+  width: 130px;
+  height: 32px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background: none;
+  color: black;
+  font-weight: bolder;
+  cursor: pointer;
+  outline: none;
+}
+
+.next-button:hover {
+  background-color: aqua;
+}
+
+.container {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: auto;
+  height: auto;
+  overflow: auto;
+  background-color: black;
+}
+
+.content-container {
+  width: 400px;
+  height: 320px;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.content-container h1 {
+  font-size: 20px;
+  height: 48px;
+  color: gray;
+  text-align: center;
+}
+
+.grades {
+  width: 240px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.grades p {
+  color: white;
+  text-align: center;
+}
+
+.button-container {
+  width: 160px;
+  height: 32px;
+  background: none;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.button-container:hover {
+  background-color: gray;
+}
