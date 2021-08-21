@@ -9,22 +9,6 @@
   </head>
   <body onload="nextQuestion(0)">
     <main>
-      <section class="container" id="score">
-        <div class="content-container">
-          <h1>Congratulations, you completed the quiz!</h1>
-          <div class="grades">
-            <p>Attempts: 10</p>
-            <p>Correct: <span id="correct-score"></span></p>
-            <p>Wrong: <span id="wrong-score"></span></p>
-            <p>Final Grade: <span id="final-grade"></span>%</p>
-            <p><span id="letter-grade"></span></p>
-          </div>
-          <div class="button-container">
-            <button class="button">Continue</button>
-          </div>
-        </div>
-      </section>
-
       <section class="quiz-container">
         <div class="details">
           <h1>Correct: <span class="current-score"></span> / 10</h1>
@@ -39,7 +23,7 @@
               <h1>Please Choose an Answer</h1>
 
               <div class="button-container">
-                <button class="button">Continue</button>
+                <button class="button" id="con-button">Continue</button>
               </div>
             </div>
           </div>
@@ -102,6 +86,21 @@
         </div>
         <div class="next-button-container">
           <button class="next-button">Next Question</button>
+        </div>
+      </section>
+
+      <section class="container" id="score">
+        <div class="content-container">
+          <h1>Congratulations, you completed the quiz!</h1>
+          <div class="grades">
+            <p>Attempts: 10</p>
+            <p>Correct: <span id="correct-score"></span></p>
+            <p>Wrong: <span id="wrong-score"></span></p>
+            <p>Final Grade: <span id="final-grade"></span>%</p>
+          </div>
+          <div class="button-container">
+            <button class="button" id="end-button">Continue</button>
+          </div>
         </div>
       </section>
     </main>

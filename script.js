@@ -82,6 +82,8 @@ var questions = [
   },
 ];
 
+var nxtBttn = document.querySelector(".next-button");
+var endBttn = document.getElementById("end-button");
 var choices = document.getElementsByName("choice");
 var questionNumber = 1;
 var currentScore = 0;
@@ -118,7 +120,7 @@ function nextQuestion(input) {
 }
 
 function checkAnswer() {
-  var currentQuestion = questionShuffle[indeNumber];
+  var currentQuestion = questionShuffle[indexNumber];
   var currentQuestionAnswer = currentQuestion.correctChoice;
   var correctChoice = null;
 
@@ -143,10 +145,6 @@ function checkAnswer() {
 
       currentScore++;
       indexNumber++;
-
-      setTimeout(() => {
-        questionNumber++;
-      }, 1000);
     } else if (choice.checked && choice.value !== currentQuestionAnswer) {
       var wrongId = choice.labels[0].id;
 
@@ -155,10 +153,6 @@ function checkAnswer() {
 
       wrongAttempt++;
       indexNumber++;
-
-      setTimeout(() => {
-        questionNumber++;
-      }, 1000);
     }
   });
 }
@@ -169,9 +163,9 @@ function handleNextQuestion() {
 
   setTimeout(() => {
     if (indexNumber <= 9) {
-      nextQuestion(indexnumber);
+      nextQuestion(indexNumber);
     } else {
-      handleEndGame();
+      endGame();
     }
     resetBackground();
   }, 1000);
@@ -188,3 +182,31 @@ function clearChecks() {
     choices[i].checked = false;
   }
 }
+
+function endGame() {
+  var finalGrade = (currentScore / 10) * 100;
+
+  document.getElementById("final-grade").innerHTML = finalGrade;
+  document.getElementById("wrong-score").innerHTML = wrongAttempt;
+  document.getElementById("correct-score").innerHTML = currentScore;
+  document.getElementById("score").style.display = "flex";
+}
+
+function closeScore() {
+  questionNumber = 1;
+  currentScore = 0;
+  wrongAttempt = 0;
+  indexNumber = 0;
+  questionShuffle = [];
+  nextQuestion(indexNumber);
+  document.getElementById("score").style.display = "none";
+}
+
+nxtBttn.addEventListener("click", function () {
+  questionNumber++;
+  handleNextQuestion();
+});
+
+endBttn.addEventListener("click", function () {
+  closeScore();
+});
